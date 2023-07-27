@@ -24,17 +24,7 @@ export class NewProductComponent implements OnInit {
         Validators.required
       ]
     ],
-    price: [
-      '',   // Valor por defecto
-      []
-    ],
-    quantity: [
-      '',   // Valor por defecto
-      [
-        Validators.required,
-        Validators.min( 1 )
-      ]
-    ],
+   
     category: [
       '',  // Valor por defecto
       []

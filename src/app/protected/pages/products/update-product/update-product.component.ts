@@ -78,8 +78,6 @@ export class UpdateProductComponent implements OnInit {
         /** Establece los valores de cada uno de los campos del formulario */
         this.productForm.setValue({
           name: this.product?.name,
-          price: this.product?.price,
-          quantity: this.product?.quantity,
           category: this.product?.category,
           description: this.product?.description
         });

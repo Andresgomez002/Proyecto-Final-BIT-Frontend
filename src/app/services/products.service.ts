@@ -28,7 +28,8 @@ export class ProductsService {
 
   /** Realiza petición al endpoint del BackEnd que registra productos */
   createProduct( product: Product ) {
-
+    console.log( 'aqui estoy' );
+    
     return this.http.post(
       `${ this.BASE_URL }/products`,      // URL del BackEnd al que debemos hacer la peticion
       product,                            // Objeto de producto a crear

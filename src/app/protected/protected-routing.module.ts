@@ -9,6 +9,7 @@ import { ProductsComponent } from './pages/products/products.component';
 import { NewProductComponent } from './pages/products/new-product/new-product.component';
 import { UpdateProductComponent } from './pages/products/update-product/update-product.component';
 import { CategoriesComponent } from './pages/categories/categories.component';
+import { ChaptersComponent } from './pages/chapters/chapters.component';
 
 const routes: Routes = [
   {
@@ -34,6 +35,10 @@ const routes: Routes = [
       {
         path: 'categories',
         component: CategoriesComponent
+      },
+      {
+        path: 'chapters',
+        component: ChaptersComponent
       },
       {
         path: '**',

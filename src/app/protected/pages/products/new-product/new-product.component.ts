@@ -32,7 +32,8 @@ export class NewProductComponent implements OnInit {
     description: [
       '',  // Valor por defecto
       []
-    ]
+    ],
+    image: [null, Validators.required]
   });
 
   constructor(
@@ -44,6 +45,10 @@ export class NewProductComponent implements OnInit {
 
   ngOnInit(): void {
     this.loadCategories();
+  }
+  onImageSelected(event: Event) {
+    const file = (event.target as HTMLInputElement).files?.[0];
+    this.productForm.patchValue({ image: file });
   }
 
   createProduct() {

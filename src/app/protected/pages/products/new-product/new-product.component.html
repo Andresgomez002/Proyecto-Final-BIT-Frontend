@@ -8,9 +8,9 @@
   autocomplete="off"
   >
     <input
-     type="text" class="Nombre" placeholder="Nombre" id="name"  formControlName="name"
+     type="text" class="Nombre" placeholder="Nombre" id="name"  formControlName="name"  enctype="multipart/form-data"
      >
-     <input type="file" class="imagen" placeholder="imagen">
+     <input type="file" class="image" placeholder="imagen" formControlName="image" (change)="onImageSelected($event)" />
     
     <textarea class="descripcion" placeholder="descripcion" id="description" formControlName="description"></textarea>
     

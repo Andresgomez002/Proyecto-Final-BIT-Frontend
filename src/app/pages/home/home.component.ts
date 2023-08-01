@@ -9,13 +9,16 @@ import { ProductsService } from 'src/app/services/products.service';
 })
 export class HomeComponent implements OnInit {
   products: Products = { products: [] };
+  productsComedia: Products = { products: []};
 
   constructor(
     private productsService: ProductsService
   ) {}
 
   ngOnInit(): void {
-    this.productsService.getProducts()
+    this.productsService.getNProducts('Accion', 6)
       .subscribe( products => this.products = products );
+      this.productsService.getNProducts('Comedia', 1)
+      .subscribe( products => this.productsComedia = products );
   }
 }

@@ -41,6 +41,11 @@ export class ProductsService {
       `${ this.BASE_URL }/products/`,   // URL del BackEnd al que debemos hacer la peticion
     );
   }
+  getNProducts(category: string, limit: number) {
+    return this.http.get<Products>(
+      `${ this.BASE_URL }/products/${category}/${limit}`,   // URL del BackEnd al que debemos hacer la peticion
+    );
+  }
 
   getProductsByUser( userId: string ) {
 

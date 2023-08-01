@@ -87,7 +87,7 @@
         </button>
       </div>
       <br>
-      <h2 class="seccion-1">Mangas Que Puedes Leer Gratis:</h2>
+      <h2 class="seccion-1">Accion:</h2>
 
       <ng-container *ngIf="products && products.products.length > 0 && products.products; then productList; else noProducts">
       </ng-container>
@@ -159,8 +159,31 @@
       </div>
 
 
-<h2 class="seccion-1">Ultimos acualizados:</h2>
+<h2 class="seccion-1">Comedia:</h2>
       
+
+<ng-container *ngIf="productsComedia && productsComedia.products.length > 0 && productsComedia.products; then productList; else noProducts">
+</ng-container>
+
+<ng-template #productList>
+  <div class="gratis gap-3">
+    
+    <div class="Card" *ngFor="let product of products.products">
+      <img
+        src="../../../assets/image/baki.jpg"
+        alt="My hero Academia"
+        class="Card-img"
+      />
+      <div class="Card-body">
+        <h1 class="Card-title seccion-1"> {{ product.name }}</h1>
+        <a href="Myheroa.html"><button class="Card-btn">Leer</button></a>
+      </div>
+    </div>
+  </div>
+</ng-template>
+<ng-template #noProducts>
+  <h3>La tienda no posee productos</h3>
+</ng-template>
 
 </div>
 

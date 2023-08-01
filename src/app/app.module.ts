@@ -8,6 +8,7 @@ import { HeaderComponent } from './component/partial/header/header.component';
 import { FooterComponent } from './component/partial/footer/footer.component';
 import { HomeComponent } from './pages/home/home.component';
 import { GuardadasComponent } from './pages/guardadas/guardadas.component';
+import { SearchComponent } from './pages/search/search.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { GuardadasComponent } from './pages/guardadas/guardadas.component';
     HeaderComponent,
     FooterComponent,
     HomeComponent,
-    GuardadasComponent
+    GuardadasComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,

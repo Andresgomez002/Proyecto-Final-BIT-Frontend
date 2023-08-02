@@ -162,13 +162,13 @@
 <h2 class="seccion-1">Comedia:</h2>
       
 
-<ng-container *ngIf="productsComedia && productsComedia.products.length > 0 && productsComedia.products; then productList; else noProducts">
+<ng-container *ngIf="productsComedia && productsComedia.products.length > 0 && productsComedia.products; then productListC; else noProductsC">
 </ng-container>
 
-<ng-template #productList>
+<ng-template #productListC>
   <div class="gratis gap-3">
     
-    <div class="Card" *ngFor="let product of products.products">
+    <div class="Card" *ngFor="let product of productsComedia.products">
       <img
         src="../../../assets/image/baki.jpg"
         alt="My hero Academia"
@@ -181,11 +181,142 @@
     </div>
   </div>
 </ng-template>
-<ng-template #noProducts>
+<ng-template #noProductsC>
   <h3>La tienda no posee productos</h3>
 </ng-template>
 
+<div class="tarjeta-grande">
+  <img
+    src="../../../assets/image/toilet bound.jpe"
+    alt="toilet bound"
+    class="boruto"
+  />
+  <div class="adentro">
+    <h1 class="seccion-1">Toilet-bound Hanako-kun</h1>
+    <p class="seccion-1">
+      Yashiro Nene busca ayuda fantasmal con su vida amorosa, pero
+      cuando "Hanako-san", el espíritu que concede deseos que acecha en
+      el baño de las niñas, resulta ser un niño, puede terminar
+      recibiendo más o menos de lo que esperaba.
+    </p>
+    <button type="button" class="btn btn-primary">
+      <i class="bi bi-play"></i> Comenzar a Leer
+    </button>
+    <button type="button" class="btn btn-outline-danger">
+      <i class="bi bi-bookmark"></i> Añadir a mi lista
+    </button>
+  </div>
 </div>
+
+<a href="#"
+  ><img src="../../../assets/image/My love story.png" alt="My love" class="img-largas"
+/></a>
+
+<h2 class="seccion-1">Fantasia:</h2>
+<ng-container *ngIf="productsFantasia && productsFantasia.products.length > 0 && productsFantasia.products; then productListF; else noProductsF">
+</ng-container>
+
+<ng-template #productListF>
+  <div class="gratis gap-3">
+    
+    <div class="Card" *ngFor="let product of productsFantasia.products">
+      <img
+        src="../../../assets/image/baki.jpg"
+        alt="My hero Academia"
+        class="Card-img"
+      />
+      <div class="Card-body">
+        <h1 class="Card-title seccion-1"> {{ product.name }}</h1>
+        <a href="Myheroa.html"><button class="Card-btn">Leer</button></a>
+      </div>
+    </div>
+  </div>
+</ng-template>
+<ng-template #noProductsF>
+  <h3>La tienda no posee productos</h3>
+</ng-template>
+
+
+<div class="tarjeta-grande">
+  <img src="../../../assets/image/chain.avif" alt="chainsaw-man" class="boruto" />
+  <div class="adentro">
+    <h1 class="seccion-1">Chainsaw-man</h1>
+    <p class="seccion-1">
+      Denji es un adolescente que vive con un demonio motosierra llamado
+      Pochita. Para pagar la deuda que le dejó su padre tras su muerte,
+      ha tenido que ganarse el pan como puede matando demonios y
+      vendiendo sus cadáverse a la mafia, aunque su vida siempre ha sido
+      miserable.
+    </p>
+    <button type="button" class="btn btn-primary">
+      <i class="bi bi-play"></i> Comenzar a Leer
+    </button>
+    <button type="button" class="btn btn-outline-danger">
+      <i class="bi bi-bookmark"></i> Añadir a mi lista
+    </button>
+  </div>
+</div>
+
+
+<h2 class="seccion-1">Drama:</h2>
+<ng-container *ngIf="productsDrama && productsDrama.products.length > 0 && productsDrama.products; then productListD; else noProductsD">
+</ng-container>
+
+<ng-template #productListD>
+  <div class="gratis gap-3">
+    
+    <div class="Card" *ngFor="let product of productsDrama.products">
+      <img
+        src="../../../assets/image/baki.jpg"
+        alt="My hero Academia"
+        class="Card-img"
+      />
+      <div class="Card-body">
+        <h1 class="Card-title seccion-1"> {{ product.name }}</h1>
+        <a href="Myheroa.html"><button class="Card-btn">Leer</button></a>
+      </div>
+    </div>
+  </div>
+</ng-template>
+<ng-template #noProductsD>
+  <h3>La tienda no posee productos</h3>
+</ng-template>
+
+<a href="#"
+><img
+  src="../../../assets/image/hellsp.png"
+  alt="Hell's paradise"
+  class="img-largas"
+/></a>
+
+<h2 class="seccion-1">Ciencia Ficcion:</h2>
+<ng-container *ngIf="productsFiccion && productsFiccion.products.length > 0; then productListCF; else noProductsCF">
+</ng-container>
+
+<ng-template #productListCF>
+  <div class="gratis gap-3">
+    
+    <div class="Card" *ngFor="let product of productsFiccion.products">
+      <img
+        src="../../../assets/image/baki.jpg"
+        alt="My hero Academia"
+        class="Card-img"
+      />
+      <div class="Card-body">
+        <h1 class="Card-title seccion-1"> {{ product.name }}</h1>
+        <a href="Myheroa.html"><button class="Card-btn">Leer</button></a>
+      </div>
+    </div>
+  </div>
+</ng-template>
+<ng-template #noProductsCF>
+  <h3>La tienda no posee productos</h3>
+</ng-template>
+
+
+</div>
+
+
 
 
 

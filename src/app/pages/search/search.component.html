@@ -1,6 +1,6 @@
 <div class="container">
     <div class="search-field">
-      <input type="text" placeholder="Buscar..." class="search-input" />
+      <input type="text" placeholder="Buscar..." class="search-input" (keyup)="loadManga()" [(ngModel)]="search"/>
     </div>
   </div>
 

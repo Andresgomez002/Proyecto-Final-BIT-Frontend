@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Products } from 'src/app/auth/interfaces/products.interface';
 import { ProductsService } from 'src/app/services/products.service';
+import { FormsModule } from '@angular/forms';
+
+
 
 @Component({
   selector: 'app-search',
@@ -9,12 +12,32 @@ import { ProductsService } from 'src/app/services/products.service';
 })
 export class SearchComponent implements OnInit {
   products: Products = { products: [] };
+  search!: string;
+  
 
   constructor(
     private productsService: ProductsService
   ) {}
   ngOnInit(): void {
-    this.productsService.getProducts()
-      .subscribe( products => this.products = products );
+    this.loadManga();
+    // this.productsService.getProducts()
+    //   .subscribe( products => this.products = products );
+  }
+
+  loadManga() {
+    this.productsService.getSearchTerm( this.search )
+      .subscribe( value => {
+        console.log( value );
+      });
+
+  //   const filter = (typeof this.search === 'string' && this.search.length > 0) ? `?searchBy=${this.search}` : '';
+  //   this.productsService.getProducts(filter).subscribe(
+  //     (mangas) => {
+  //       this.products = mangas;
+  //     },
+  //     (error) => {
+  //       console.log('Error', error);
+  //     }
+  //   );
   }
 }

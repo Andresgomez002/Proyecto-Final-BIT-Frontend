@@ -19,15 +19,16 @@ export class SearchComponent implements OnInit {
     private productsService: ProductsService
   ) {}
   ngOnInit(): void {
-    this.loadManga();
-    // this.productsService.getProducts()
-    //   .subscribe( products => this.products = products );
+    // this.loadManga();
+    this.productsService.getProducts()
+      .subscribe( products => this.products = products );
   }
 
   loadManga() {
+    this.products ={ products: [] }
     this.productsService.getSearchTerm( this.search )
-      .subscribe( value => {
-        console.log( value );
+      .subscribe(products => {
+        this.products=products
       });
 
   //   const filter = (typeof this.search === 'string' && this.search.length > 0) ? `?searchBy=${this.search}` : '';

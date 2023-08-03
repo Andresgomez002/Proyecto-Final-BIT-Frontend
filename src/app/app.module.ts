@@ -9,6 +9,7 @@ import { FooterComponent } from './component/partial/footer/footer.component';
 import { HomeComponent } from './pages/home/home.component';
 import { GuardadasComponent } from './pages/guardadas/guardadas.component';
 import { SearchComponent } from './pages/search/search.component';
+import { PlanesComponent } from './pages/planes/planes.component';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { SearchComponent } from './pages/search/search.component';
     FooterComponent,
     HomeComponent,
     GuardadasComponent,
-    SearchComponent
+    SearchComponent,
+    PlanesComponent
   ],
   imports: [
     BrowserModule,

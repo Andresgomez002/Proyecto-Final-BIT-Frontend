@@ -83,7 +83,7 @@
     justify-content: space-between;
   }
   .Card-wrapper {
-    flex: 0 0 calc(16.66% - 10px);
+    flex: 0 0 calc(6.66% - 10px);
     margin-bottom: 10px;
 }
 .row {

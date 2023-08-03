@@ -85,6 +85,10 @@ export class UpdateProductComponent implements OnInit {
 
 
   }
+  onImageSelected(event: Event) {
+    const file = (event.target as HTMLInputElement).files?.[0];
+    this.productForm.patchValue({ image: file });
+  }
 
   updateProduct() {
     console.group( 'productForm' );

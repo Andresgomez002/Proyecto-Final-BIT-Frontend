@@ -1,30 +1,26 @@
 <div class="container">
     <div class="search-field">
-      <input type="text" placeholder="Buscar..." class="search-input" (keyup)="loadManga()" [(ngModel)]="search"/>
+      <input type="text" placeholder="Buscar..." class="search-input"  [(ngModel)]="search" (ngModelChange)="onSearchChange()"/>
     </div>
   </div>
-
-  <div class="container">
-    <ng-container *ngIf="products && products.products.length > 0 && products.products; then productList; else noProducts">
-    </ng-container>
-
-    <ng-template #productList>
+  <div class="container grid-container">
+    <ng-container *ngIf="products && products.products.length > 0">
       <div class="gratis gap-3">
-        
-        <div class="Card" *ngFor="let product of products.products">
-          <img
-            src="../../../assets/image/baki.jpg"
-            alt="My hero Academia"
-            class="Card-img"
-          />
-          <div class="Card-body">
-            <h1 class="Card-title seccion-1"> {{ product.name }}</h1>
-            <a href="Myheroa.html"><button class="Card-btn">Leer</button></a>
+        <div class="row">
+          <div class="Card-wrapper" *ngFor="let product of products.products">
+            <div class="Card">
+              <!-- Aquí sigue el código existente para mostrar los detalles del producto -->
+              <img src="../../../assets/image/baki.jpg" alt="My hero Academia" class="Card-img" />
+              <div class="Card-body">
+                <h1 class="Card-title seccion-1"> {{ product.name }}</h1>
+                <a href="Myheroa.html"><button class="Card-btn">Leer</button></a>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </ng-template>
+    </ng-container>
     <ng-template #noProducts>
-      <h3>La tienda no posee productos</h3>
+      <h3></h3>
     </ng-template>
   </div>

@@ -13,23 +13,24 @@ import { FormsModule } from '@angular/forms';
 export class SearchComponent implements OnInit {
   products: Products = { products: [] };
   search!: string;
+  rowsOfProducts: any[] = [];
   
 
   constructor(
     private productsService: ProductsService
   ) {}
-  ngOnInit(): void {
-    // this.loadManga();
-    this.productsService.getProducts()
-      .subscribe( products => this.products = products );
-  }
+  // ngOnInit(): void {
+  //   // this.loadManga();
+  //   this.productsService.getProducts()
+  //     .subscribe( products => this.products = products );
+  // }
 
-  loadManga() {
-    this.products ={ products: [] }
-    this.productsService.getSearchTerm( this.search )
-      .subscribe(products => {
-        this.products=products
-      });
+  // loadManga() {
+  //   this.products ={ products: [] }
+  //   this.productsService.getSearchTerm( this.search )
+  //     .subscribe(products => {
+  //       this.products=products
+  //     });
 
   //   const filter = (typeof this.search === 'string' && this.search.length > 0) ? `?searchBy=${this.search}` : '';
   //   this.productsService.getProducts(filter).subscribe(
@@ -40,5 +41,30 @@ export class SearchComponent implements OnInit {
   //       console.log('Error', error);
   //     }
   //   );
+ 
+  ngOnInit(): void {
+    this.productsService.getProducts().subscribe(products => {
+      this.products = products;
+    });
+    this.loadProducts();
   }
-}
+
+  loadProducts() {
+    if (this.search.trim() === '') {
+      this.productsService.getProducts().subscribe(products => {
+        this.products = products;
+      });
+    } else {
+      this.productsService.getSearchTerm(this.search).subscribe(products => {
+        this.products = products;
+      });
+    }
+
+  }
+
+  onSearchChange() {
+    this.loadProducts();
+  }
+
+  }
+

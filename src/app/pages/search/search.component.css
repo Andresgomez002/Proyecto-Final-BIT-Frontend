@@ -23,7 +23,7 @@
   }
   .Card {
     width: 230px;
-    height: 300px;
+    height: 330px;
     border-radius: 10px;
     overflow: hidden;
     border: 5px solid blue;
@@ -78,13 +78,26 @@
     margin-bottom: 15px;
   }
 
+  .row {
+    display: flex;
+    justify-content: space-between;
+  }
+  .Card-wrapper {
+    flex: 0 0 calc(16.66% - 10px);
+    margin-bottom: 10px;
+}
+.row {
+  display: flex;
+  justify-content: space-between;
+}
+  
   @media (max-width: 1400px) {
     .gratis {
       flex-wrap: wrap;
       justify-content: center;
     }
     .Card {
-      width: 20%;
+      width: 25%;
     }
   }
   @media (max-width: 1200px) {
@@ -93,7 +106,7 @@
       justify-content: center;
     }
     .Card {
-      width: 24%;
+      width: 30%;
     }
   }
   @media (max-width: 968px) {

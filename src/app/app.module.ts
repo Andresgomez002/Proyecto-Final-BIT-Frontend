@@ -10,6 +10,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { GuardadasComponent } from './pages/guardadas/guardadas.component';
 import { SearchComponent } from './pages/search/search.component';
 import { PlanesComponent } from './pages/planes/planes.component';
+import { MiListaComponent } from './pages/mi-lista/mi-lista.component';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { PlanesComponent } from './pages/planes/planes.component';
     HomeComponent,
     GuardadasComponent,
     SearchComponent,
-    PlanesComponent
+    PlanesComponent,
+    MiListaComponent
   ],
   imports: [
     BrowserModule,

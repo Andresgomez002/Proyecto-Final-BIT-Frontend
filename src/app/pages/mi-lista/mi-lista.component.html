@@ -1,0 +1,56 @@
+<main class="main">
+    <div class="container">
+      <div class="title-lista">
+        <h3>Mis listas</h3>
+      </div>
+      <div class="listah gap-5">
+        <a href="listaHistorial.html"
+          ><button type="button" class="btn btn-dark">Mi Lista</button></a
+        >
+        <a href="Historial.html"
+          ><button type="button" class="btn btn-dark">Historial</button></a
+        >
+      </div>
+      <div class="cgrande">
+      
+        <ng-container *ngIf="cart && cart.length>0; then cartList; else noList"> 
+    
+        </ng-container>
+        <ng-template #cartList>
+          <div class="fila">
+            <div class="Card" *ngFor="let product of cart">
+              <img src="../../../assets/image/baki.jpg" alt="tonari" class="Card-img" />
+              <div class="Card-body">
+                <h1 class="Card-title seccion-1">{{product.name}}</h1>
+                <button class="Card-btn">Leer</button>
+                <br>
+                <button class="Card-btn" (click)="removeToCart(product._id)">Eliminar</button>
+              </div>
+            </div>
+          </div>
+         <br>
+        </ng-template>
+       
+        <div class="text-lista">
+          <ng-template #noList>
+            <img
+            src="../../../assets/image/rem5-PhotoRoom.png-PhotoRoom.png"
+            alt="rem"
+            class="rema"
+          />
+          <div class="text-lista">
+            <h4>Tu lista necesita algo de amor.</h4>
+            <h4>Llenala con tus mangas favoritos</h4>
+            <div class="volver" routerLink="/">
+              <button type="button" class="btn btn-primary btnl" >
+                Volver al inicio
+              </button>
+            </div>
+             
+          </div>
+          </ng-template>
+
+        </div>
+      </div>
+    </div>
+  </main>

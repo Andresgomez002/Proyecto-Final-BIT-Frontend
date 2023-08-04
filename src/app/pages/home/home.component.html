@@ -105,7 +105,7 @@
               <h1 class="Card-title seccion-1"> {{ product.name }}</h1>
               <a href="Myheroa.html"><button class="Card-btn">Leer</button></a>
               <br>
-              <a href="Myheroa.html"><button class="Card-btn">Añadir a favoritos</button></a>
+              <button class="Card-btn" (click)="agregarCarrito(product)">Añadir a favoritos</button>
             </div>
           </div>
         </div>
@@ -180,7 +180,7 @@
         <h1 class="Card-title seccion-1"> {{ product.name }}</h1>
         <a href="Myheroa.html"><button class="Card-btn">Leer</button></a>
         <br>
-              <a href="Myheroa.html"><button class="Card-btn">Añadir a favoritos</button></a>
+              <button class="Card-btn" (click)="agregarCarrito(product)">Añadir a favoritos</button>
       </div>
     </div>
   </div>
@@ -233,7 +233,7 @@
         <h1 class="Card-title seccion-1"> {{ product.name }}</h1>
         <a href="Myheroa.html"><button class="Card-btn">Leer</button></a>
         <br>
-              <a href="Myheroa.html"><button class="Card-btn">Añadir a favoritos</button></a>
+             <button class="Card-btn" (click)="agregarCarrito(product)">Añadir a favoritos</button>
       </div>
     </div>
   </div>
@@ -281,7 +281,7 @@
         <h1 class="Card-title seccion-1"> {{ product.name }}</h1>
         <a href="Myheroa.html"><button class="Card-btn">Leer</button></a>
         <br>
-              <a href="Myheroa.html"><button class="Card-btn">Añadir a favoritos</button></a>
+             <button class="Card-btn" (click)="agregarCarrito(product)">Añadir a favoritos</button>
       </div>
     </div>
   </div>
@@ -302,7 +302,7 @@
 </ng-container>
 
 <ng-template #productListCF>
-  <div class="gratis gap-3">
+x  <div class="gratis gap-3">
     
     <div class="Card" *ngFor="let product of productsFiccion.products">
       <img
@@ -314,7 +314,7 @@
         <h1 class="Card-title seccion-1"> {{ product.name }}</h1>
         <a href="Myheroa.html"><button class="Card-btn">Leer</button></a>
         <br>
-              <a href="Myheroa.html"><button class="Card-btn">Añadir a favoritos</button></a>
+              <button class="Card-btn" (click)="agregarCarrito(product)">Añadir a favoritos</button>
       </div>
     </div>
   </div>

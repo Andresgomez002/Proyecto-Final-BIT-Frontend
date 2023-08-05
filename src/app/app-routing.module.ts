@@ -4,6 +4,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { SearchComponent } from './pages/search/search.component';
 import { PlanesComponent } from './pages/planes/planes.component';
 import { MiListaComponent } from './pages/mi-lista/mi-lista.component';
+import { DetailProductComponent } from './pages/detail-product/detail-product.component';
 
 const routes: Routes = [
   /** Define la ruta de los dos modulos usando carga perezosa */
@@ -25,6 +26,12 @@ const routes: Routes = [
   {
     path: 'miLista',
     component: MiListaComponent
+    
+  },
+  {
+    path: 'product/:id',
+    component: DetailProductComponent
+
     
   },
   {

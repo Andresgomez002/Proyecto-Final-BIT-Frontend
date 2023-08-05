@@ -10,6 +10,7 @@ import { NewProductComponent } from './pages/products/new-product/new-product.co
 import { UpdateProductComponent } from './pages/products/update-product/update-product.component';
 import { CategoriesComponent } from './pages/categories/categories.component';
 import { ChaptersComponent } from './pages/chapters/chapters.component';
+import { NewFormComponent } from './pages/new-form/new-form.component';
 
 const routes: Routes = [
   {
@@ -39,6 +40,11 @@ const routes: Routes = [
       {
         path: 'chapters',
         component: ChaptersComponent
+      },
+      {
+        path: 'news',
+        component: NewFormComponent
+        
       },
       {
         path: '**',

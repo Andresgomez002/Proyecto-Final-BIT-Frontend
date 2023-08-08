@@ -45,7 +45,28 @@
   .empezarleer1 {
     width: 100%;
   }
-  
+  .capb {
+    margin-top: 35px;
+    justify-content: center;
+    display: flex;
+    height: 45px;
+    margin-bottom: 15px;
+}
+  .pressbutton{
+    width: 70%;
+    background-color: azure;
+    display: flex;
+    justify-content: center;
+    border-radius: 10px;
+    
+  }
+  .clc{
+    color: black;
+    margin-top: 7px;
+  }
+  .atext{
+    text-decoration: none;
+  }
   /**/
   
   @media (max-width: 1200px) {

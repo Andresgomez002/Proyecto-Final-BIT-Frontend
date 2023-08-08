@@ -10,8 +10,12 @@
             </div>
           </div>
           <h3>Mangas</h3>
-          <select class="Category"  id="category" >
+          <select class="Category"  id="category" formControlName="manga">
           <option value="">Seleccione...</option>
+          <option
+        *ngFor="let product of products"
+        value="{{ product.name }}"
+      >{{ product.name }}</option>
         </select>
         <br>
   

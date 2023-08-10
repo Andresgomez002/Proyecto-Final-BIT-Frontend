@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Product } from 'src/app/auth/interfaces/product.interface';
 import { Products } from 'src/app/auth/interfaces/products.interface';
 import { Cart } from 'src/app/protected/interfaces/cart.interface';
+import { HistoryService } from 'src/app/services/history.service';
 import { ProductsService } from 'src/app/services/products.service';
 
 @Component({
@@ -18,7 +19,8 @@ export class HomeComponent implements OnInit {
   cart: any[] = [];
 
   constructor(
-    private productsService: ProductsService
+    private productsService: ProductsService,
+    private historyService: HistoryService 
   ) {}
 
   ngOnInit(): void {
@@ -60,6 +62,9 @@ export class HomeComponent implements OnInit {
 
 
     localStorage.setItem('cart', JSON.stringify(this.cart));
+  }
+  addToHistory(product: any) {
+    this.historyService.addToReadHistory(product);
   }
 
 }

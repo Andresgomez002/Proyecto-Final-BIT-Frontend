@@ -12,6 +12,7 @@ import { SearchComponent } from './pages/search/search.component';
 import { PlanesComponent } from './pages/planes/planes.component';
 import { MiListaComponent } from './pages/mi-lista/mi-lista.component';
 import { DetailProductComponent } from './pages/detail-product/detail-product.component';
+import { HistoryComponent } from './pages/history/history.component';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { DetailProductComponent } from './pages/detail-product/detail-product.co
     SearchComponent,
     PlanesComponent,
     MiListaComponent,
-    DetailProductComponent
+    DetailProductComponent,
+    HistoryComponent
   ],
   imports: [
     BrowserModule,

@@ -104,7 +104,7 @@
             />
             <div class="Card-body">
               <h1 class="Card-title seccion-1"> {{ product.name }}</h1>
-               <button class="Card-btn" [routerLink]="['/product', product._id]">Leer</button>
+               <button class="Card-btn" [routerLink]="['/product', product._id]" (click)="addToHistory(product)">Leer</button>
               <br>
               <button class="Card-btn" (click)="agregarCarrito(product)">Añadir a favoritos</button>
             </div>

@@ -4,7 +4,7 @@ import { New } from '../protected/interfaces/new.interface';
 @Injectable({
   providedIn: 'root'
 })
-export class NewsServiceService implements OnInit{
+export class NewsServiceService {
   noticias! : Array<New>;
   constructor() { }
 }

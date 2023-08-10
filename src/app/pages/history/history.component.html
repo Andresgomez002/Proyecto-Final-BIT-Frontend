@@ -1,0 +1,52 @@
+
+    <div class="container">
+      <div class="title-lista">
+        <h3>Mis listas</h3>
+      </div>
+      <div class="listah gap-5">
+        <a routerLink = "/miLista"
+          ><button type="button" class="btn btn-dark">Mi Lista</button></a
+        >
+        <button type="button" class="btn btn-dark">Historial</button>
+      </div>
+      <div class="cgrande">
+        
+        <ng-container *ngIf="readHistory && readHistory.length>0; then historyList; else noList"> 
+    
+        </ng-container>
+        <ng-template #historyList>
+          <div class="fila">
+            <div class="Card" *ngFor="let product of readHistory">
+              <img src="../../../assets/image/baki.jpg" alt="tonari" class="Card-img" />
+              <div class="Card-body">
+                <h1 class="Card-title seccion-1">{{product.name}}</h1>
+                <button class="Card-btn">Leer</button>
+                <br>
+                <button class="Card-btn" (click)="removeFromHistory(product._id)">Eliminar</button>
+              </div>
+            </div>
+          </div>
+         <br>
+        </ng-template>
+       
+        <div class="text-lista">
+          <ng-template #noList>
+            <img
+          src="../../../assets/image/abca302aec27974a2f540592d204649c-PhotoRoom.png-PhotoRoom.png"
+          alt="rem"
+          class="rema"
+        />
+        <div class="text-lista">
+          <h4>Empieza a leer tus series favoritas</h4>
+          <h4>para poder ver lo que haz leido aqui</h4>
+          <a href="index.html"
+            ><button type="button" class="btn btn-primary btnl">
+              Volver al inicio
+            </button></a
+          >
+        </div>
+          </ng-template>
+
+        </div>
+      </div>
+    </div>

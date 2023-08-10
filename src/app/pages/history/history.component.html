@@ -20,9 +20,9 @@
               <img src="../../../assets/image/baki.jpg" alt="tonari" class="Card-img" />
               <div class="Card-body">
                 <h1 class="Card-title seccion-1">{{product.name}}</h1>
-                <button class="Card-btn">Leer</button>
+                <button class="Card-btn" [routerLink]="['/product', product._id]">Leer</button>
                 <br>
-                <button class="Card-btn" (click)="removeFromHistory(product._id)">Eliminar</button>
+                <button class="Card-btn"  (click)="removeFromHistory(product._id)">Eliminar</button>
               </div>
             </div>
           </div>
@@ -39,10 +39,10 @@
         <div class="text-lista">
           <h4>Empieza a leer tus series favoritas</h4>
           <h4>para poder ver lo que haz leido aqui</h4>
-          <a href="index.html"
+          <div routerLink = "/"
             ><button type="button" class="btn btn-primary btnl">
               Volver al inicio
-            </button></a
+            </button></div
           >
         </div>
           </ng-template>

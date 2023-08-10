@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HistoryService } from 'src/app/services/history.service';
 
 @Component({
   selector: 'app-mi-lista',
@@ -19,5 +20,11 @@ export class MiListaComponent implements OnInit {
       return item._id !== _id;
     });
     localStorage.setItem('cart', JSON.stringify(this.cart));
+  }
+  addToHistory(product: any) {
+    this.historyService.addToReadHistory(product);
+  }
+  constructor(private historyService: HistoryService){
+
   }
 }

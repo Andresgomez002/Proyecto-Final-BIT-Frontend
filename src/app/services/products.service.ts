@@ -27,14 +27,23 @@ export class ProductsService {
   }
 
   /** Realiza petición al endpoint del BackEnd que registra productos */
-  createProduct( product: Product ) {
-    console.log( 'aqui estoy' );
+  createProduct( formProduct: FormData ) {
+    console.log( 'Sumerce muñeco', formProduct );
     
-    return this.http.post(
+    this.headers.append('Accept', 'application/json')
+    const data = this.http.post(
       `${ this.BASE_URL }/products`,      // URL del BackEnd al que debemos hacer la peticion
-      product,                            // Objeto de producto a crear
+      formProduct,                            // Objeto de producto a crear
       { headers: this.headers }           // Cabeceras con información requerida
+              
     );
+
+    // data.subscribe( ( res ) => {
+    //   console.log( res );
+    // })
+      
+      
+    return data;
   }
   getProducts() {
     return this.http.get<Products>(

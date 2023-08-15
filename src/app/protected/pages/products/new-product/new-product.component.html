@@ -6,11 +6,12 @@
   [formGroup]="productForm"
   (ngSubmit)="createProduct()"
   autocomplete="off"
+  enctype="multipart/form-data"
   >
     <input
-     type="text" class="Nombre" placeholder="Nombre" id="name"  formControlName="name"  enctype="multipart/form-data"
+     type="text" class="Nombre" placeholder="Nombre" id="name"  formControlName="name"
      >
-     <input type="file" class="image" placeholder="imagen" formControlName="image" (change)="onImageSelected($event)" />
+     <input type="file" class="image" placeholder="imagen" formControlName="urlImage" multiple accept="image/*" #fileInput/>
     
     <textarea class="descripcion" placeholder="descripcion" id="description" formControlName="description"></textarea>
     

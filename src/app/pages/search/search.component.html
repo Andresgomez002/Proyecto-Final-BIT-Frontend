@@ -10,7 +10,9 @@
           <div class="Card-wrapper" *ngFor="let product of products.products">
             <div class="Card">
               <!-- Aquí sigue el código existente para mostrar los detalles del producto -->
-              <img src="../../../assets/image/baki.jpg" alt="My hero Academia" class="Card-img" />
+              <img   [srcset]="product.urlImage"
+              [alt]="product.name"
+              class="Card-img" />
               <div class="Card-body">
                 <h1 class="Card-title seccion-1"> {{ product.name }}</h1>
                 <a href="Myheroa.html"><button class="Card-btn">Leer</button></a>

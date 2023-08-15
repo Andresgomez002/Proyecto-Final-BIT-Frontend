@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
 import { Category } from 'src/app/auth/interfaces/category.interface';
@@ -14,41 +14,36 @@ import { CategoriesService } from 'src/app/services/categories.service';
 })
 export class NewProductComponent implements OnInit {
   // Atributos
-  categories!: Array<any>;
+  productForm!: FormGroup;
+  @ViewChild('fileInput') fileInput!: ElementRef;
 
-  // Procuramos usar los mismos nombres que espera nuestra API en las propiedades que agrupamos en nuestro FormBuilder Group
-  productForm: FormGroup = this.fb.group({
-    name: [
-      '',   // Valor por defecto
-      [
-        Validators.required
-      ]
-    ],
-   
-    category: [
-      '',  // Valor por defecto
-      []
-    ],
-    description: [
-      '',  // Valor por defecto
-      []
-    ],
-    image: [null, Validators.required]
-  });
+  categories!: Array<any>;
+  preview!: any;
+
+  
+
+  
 
   constructor(
     private fb: FormBuilder,
     private productService: ProductsService,
     private router: Router,
     private categoriesService: CategoriesService
-  ) {}
+  ) {
+    this.buildForm();
+  }
 
   ngOnInit(): void {
     this.loadCategories();
   }
-  onImageSelected(event: Event) {
-    const file = (event.target as HTMLInputElement).files?.[0];
-    this.productForm.patchValue({ image: file });
+
+  buildForm(){
+    this.productForm = new FormGroup({
+      name: new FormControl(''),
+      description: new FormControl(''),
+      urlImage: new FormControl(null),
+      category: new FormControl('')
+    })
   }
 
   createProduct() {
@@ -57,16 +52,33 @@ export class NewProductComponent implements OnInit {
     console.log( this.productForm.valid );
     console.groupEnd();
 
-    this.productService.createProduct( this.productForm.value )
+    const formdata = new FormData();
+
+    formdata.append('name',this.productForm.get('name')?.value)
+    formdata.append('description',this.productForm.get('description')?.value)
+    formdata.append('category',this.productForm.get('category')?.value)
+
+    const fileInput = this.fileInput.nativeElement;
+
+    console.log(fileInput.files);
+ 
+    if (fileInput.files && fileInput.files.length > 0) {
+      formdata.append('urlImage', fileInput.files[0], fileInput.files[0].name);
+    }
+    
+    this.productService.createProduct( formdata )
       .subscribe( ( response ) => {
-        console.log( response );
+        console.log('holaaa');
+        console.log( '>>>>>>', response );
+
+
       });
 
     this.productForm.reset();
 
-    setTimeout( () => {
-      this.router.navigate( [ 'dashboard', 'products' ] );
-    }, 1000 );
+    // setTimeout( () => {
+    //   this.router.navigate( [ 'dashboard', 'products' ] );
+    // }, 1000 );
   }
 
   loadCategories() {

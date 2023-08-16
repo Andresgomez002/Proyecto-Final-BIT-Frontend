@@ -13,6 +13,7 @@ import { ProductsService } from 'src/app/services/products.service';
 export class DetailProductComponent implements OnInit{
   productId!: any;
   product!: Product;
+  cart: any[] = [];
   constructor(private route: ActivatedRoute, private productService: ProductsService){
 
   }
@@ -24,6 +25,30 @@ export class DetailProductComponent implements OnInit{
         this.product = product;
       });
     });
+  }
+  agregarCarrito(product: any) {
+    const cartStorage = localStorage.getItem('cart') ? JSON.parse(localStorage.getItem('cart')!) : [];
+
+    this.cart = cartStorage;
+
+    this.cart = [
+      {
+        _id: product._id,
+        name: product.name,
+        urlImage: product.urlImage
+      },
+      ...this.cart
+    ]
+
+      // this.cart.push({
+      //   _id: product._id,
+      //   name: product.name,
+      //   urlImage: product.urlImage
+      // });
+
+
+
+    localStorage.setItem('cart', JSON.stringify(this.cart));
   }
 }
 

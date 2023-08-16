@@ -15,7 +15,7 @@
               class="Card-img" />
               <div class="Card-body">
                 <h1 class="Card-title seccion-1"> {{ product.name }}</h1>
-                <a href="Myheroa.html"><button class="Card-btn">Leer</button></a>
+                <button class="Card-btn" [routerLink]="['/product', product._id]" (click)="addToHistory(product)">Leer</button>
               </div>
             </div>
           </div>

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Products } from 'src/app/auth/interfaces/products.interface';
 import { ProductsService } from 'src/app/services/products.service';
 import { FormsModule } from '@angular/forms';
+import { HistoryService } from 'src/app/services/history.service';
 
 
 
@@ -17,7 +18,8 @@ export class SearchComponent implements OnInit {
   
 
   constructor(
-    private productsService: ProductsService
+    private productsService: ProductsService,
+    private historyService: HistoryService 
   ) {}
   // ngOnInit(): void {
   //   // this.loadManga();
@@ -64,6 +66,9 @@ export class SearchComponent implements OnInit {
 
   onSearchChange() {
     this.loadProducts();
+  }
+  addToHistory(product: any) {
+    this.historyService.addToReadHistory(product);
   }
 
   }

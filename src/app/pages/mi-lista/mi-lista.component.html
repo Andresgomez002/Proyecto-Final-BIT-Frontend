@@ -20,7 +20,8 @@
         <ng-template #cartList>
           <div class="fila">
             <div class="Card" *ngFor="let product of cart">
-              <img src="../../../assets/image/baki.jpg" alt="tonari" class="Card-img" />
+              <img [src]="product.urlImage"
+              [alt]="product.name" class="Card-img" />
               <div class="Card-body">
                 <h1 class="Card-title seccion-1">{{product.name}}</h1>
                 <button class="Card-btn" [routerLink]="['/product', product._id]" (click)="addToHistory(product)">Leer</button>

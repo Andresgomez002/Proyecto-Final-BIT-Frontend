@@ -16,6 +16,7 @@ export class NewProductComponent implements OnInit {
   // Atributos
   productForm!: FormGroup;
   @ViewChild('fileInput') fileInput!: ElementRef;
+  // @ViewChild('fileInput2') fileInput2!: ElementRef;
 
   categories!: Array<any>;
   preview!: any;
@@ -65,6 +66,13 @@ export class NewProductComponent implements OnInit {
     if (fileInput.files && fileInput.files.length > 0) {
       formdata.append('urlImage', fileInput.files[0], fileInput.files[0].name);
     }
+    // const fileInput2 = this.fileInput2.nativeElement;
+    // if (fileInput2.files && fileInput2.files.length > 0) {
+    //   formdata.append('imageMain', fileInput2.files[0], fileInput2.files[0].name);
+    // }
+
+    console.log( fileInput.files );
+   
     
     this.productService.createProduct( formdata )
       .subscribe( ( response ) => {

@@ -6,6 +6,7 @@ import { PlanesComponent } from './pages/planes/planes.component';
 import { MiListaComponent } from './pages/mi-lista/mi-lista.component';
 import { DetailProductComponent } from './pages/detail-product/detail-product.component';
 import { HistoryComponent } from './pages/history/history.component';
+import { NewsComponent } from './pages/news/news.component';
 
 const routes: Routes = [
   /** Define la ruta de los dos modulos usando carga perezosa */
@@ -38,6 +39,12 @@ const routes: Routes = [
   {
     path: 'history',
     component: HistoryComponent
+
+    
+  },
+  {
+    path: 'news',
+    component: NewsComponent
 
     
   },

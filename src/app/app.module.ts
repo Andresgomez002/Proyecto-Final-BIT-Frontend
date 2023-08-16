@@ -13,6 +13,7 @@ import { PlanesComponent } from './pages/planes/planes.component';
 import { MiListaComponent } from './pages/mi-lista/mi-lista.component';
 import { DetailProductComponent } from './pages/detail-product/detail-product.component';
 import { HistoryComponent } from './pages/history/history.component';
+import { NewsComponent } from './pages/news/news.component';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { HistoryComponent } from './pages/history/history.component';
     PlanesComponent,
     MiListaComponent,
     DetailProductComponent,
-    HistoryComponent
+    HistoryComponent,
+    NewsComponent
   ],
   imports: [
     BrowserModule,
